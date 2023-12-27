@@ -1,0 +1,31 @@
+/* IMPORTS */
+@import './reset.css';
+@import './vars.css';
+
+/* PERSONAL CSS RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  overflow: hidden;
+  background-color: var(--clr-test) /* visual aid to see if CSS is working */
+}
+
+/* STYLING */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 600px;
+  border: 1px solid #fff;
+}
