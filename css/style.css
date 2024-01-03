@@ -1,31 +1,264 @@
-/* IMPORTS */
-@import './reset.css';
-@import './vars.css';
+@charset "utf-8";
 
-/* PERSONAL CSS RESET */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
-  border: none;
-  overflow: hidden;
-  background-color: var(--clr-test) /* visual aid to see if CSS is working */
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url("../assets/font/BarlowCondensed-Bold.ttf");
 }
 
-/* STYLING */
+/*---------------------------------------------------------*/
+/*  RESETS                                                 */
+/*---------------------------------------------------------*/
+
+/*! minireset.css v0.0.5 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+ul {
+  list-style: none;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+iframe {
+  border: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+/* COMMON */
+html,
 body {
+  height: 100%;
+}
+a,
+a:hover,
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+/* Creative */
+body {
+  background: #181818;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  font-family: "Slate Pro", sans-serif;
+  font-size: 16px;
+  /* center container on desktop */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  color: white;
 }
 
 .container {
+  width: 320px;
+  height: 480px;
+  overflow: hidden;
   position: relative;
-  width: 400px;
-  height: 600px;
-  border: 1px solid #fff;
+}
+
+.secondscreen {
+  display: none;
+}
+
+.firstscreen,
+.secondscreen {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 320px;
+  height: 480px;
+}
+
+.firstscreen {
+  background-image: url("../assets/images/bg.png");
+}
+
+.secondscreen {
+  background-image: url("../assets/images/bg-secondscreen.png");
+}
+
+ 
+canvas {
+  margin: 20px auto;
+}
+
+.btn,
+.btn-alt {
+  position: absolute;
+  top: 350px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 40%;
+  cursor: pointer;
+}
+
+.btn-alt {
+  top: 380px;
+}
+
+.pop-start,
+.pop-final {
+  position: absolute;
+  z-index: 1000;
+  top: 130px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 90%;
+  opacity: 0;
+}
+
+.btn-exit {
+  position: absolute;
+  z-index: 100;
+  top: 300px;
+  right: 10px;
+  width: 12%;
+  opacity: .8;
+}
+
+.path {
+  position: absolute;
+  z-index: 10;
+  top: 28px;
+  right: 15px;
+  width: 90%;
+  opacity: 0;
+}
+
+.btn-hint,
+#timer {
+  position: absolute;
+  z-index: 10;
+  top: 365px;
+  padding: .25rem 1rem;
+  border: none;
+  border-radius: 1px;
+  line-height: 1;
+  background-color: #fff;
+  color: #bf895b;
+  font-family: 'Barlow Condensed';
+  font-size: 15px;
+}
+
+#timer {
+  left: 10px;
+}
+
+.btn-hint {
+  right: 10px;
+}
+
+.arrows-container {
+  position: absolute;
+  top: 375px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.arrows {
+  width: 70%;
+}
+
+.btn-arrow {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  background-color: transparent;
+  width: 35px;
+  height: 30px;
+}
+
+.btn-arrow-right {
+  top: 30px;
+  right: 25px;
+}
+
+.btn-arrow-left {
+  top: 30px;
+  left: 25px;
+}
+
+.btn-arrow-top {
+  top: 5px;
+  right: 62.5px;
+}
+
+.btn-arrow-bottom {
+  top: 60px;
+  right: 62.5px;
+}
+
+.fireworks {
+  display: none;
+  position: absolute;
+  top: 10px;
+  height: 480px;
+  width: 80%;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 10000;
+}
+
+.vid-trailer {
+  position: absolute;
+  top: 80px;
+  right: 50%;
+  transform: translateX(50%);
 }
