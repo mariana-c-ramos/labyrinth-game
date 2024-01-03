@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Outter Space | HTML5 Creative | by maryProgramms</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div class="container"></div>
-
-  <script src="js/app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Labyrinth Game</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="firstscreen">
+        <p style="position: absolute; bottom: 120px; right: 0; left: 0; margin: 0 auto; font-size: 30px; font-weight: bold; padding: 10px 0; background-color: rgb(1, 39, 1);">Let's Play!</p>
+        <img class="btn" src="./assets/images/btn.png" alt="An icon.">
+      </div>
+      <div class="secondscreen">
+        <img class="pop-start" src="./assets/images/pop-start.png" alt="">
+        <img class="pop-final" src="./assets/images/pop-final.png" alt="">
+        <img class="fireworks" src="./assets/celebrations.gif" alt="">
+        <canvas class="mazescreen" width="300" height="400" id="myCanvas"></canvas>
+        <img class="btn-exit" src="./assets/images/exit.png" alt="Exit zone.">
+        <img class="path" src="./assets/images/hint-path.png" alt="Path to the exit.">
+        <div id="timer"></div>
+        <button id="btn-hint" class="btn-hint">Hint</button>
+        <div class="arrows-container">
+          <img id="arrows" class="arrows" src="./assets/images/arrows.png" alt="Arrows for moving.">
+          <div id="btn-arrow" class="btn-arrow btn-arrow-right"></div>
+          <div id="btn-arrow" class="btn-arrow btn-arrow-left"></div>
+          <div id="btn-arrow" class="btn-arrow btn-arrow-top"></div>
+          <div id="btn-arrow" class="btn-arrow btn-arrow-bottom"></div>
+        </div>
+      </div>
+      <div class="thirdscreen">
+      </div>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
 </html>
